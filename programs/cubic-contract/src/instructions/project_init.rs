@@ -5,7 +5,7 @@ use crate::state::ProjectInit;
 
 #[derive(Accounts)]
 #[instruction(_projectname:String)]
-pub struct CreateProjectContext<'info> {
+pub struct InitProjectContext<'info> {
     #[account(mut)]
     pub authority: Signer<'info>,
 
@@ -25,7 +25,7 @@ pub struct CreateProjectContext<'info> {
 }
 
 pub fn handler(
-    ctx: Context<CreateProjectContext>,
+    ctx: Context<InitProjectContext>,
     metadata: String,
     _projectname: String,
 ) -> Result<()> {

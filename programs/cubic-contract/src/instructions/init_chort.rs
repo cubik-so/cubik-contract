@@ -24,6 +24,7 @@ pub struct InitChortContext<'info> {
 pub fn handler(ctx: Context<InitChortContext>, _chortname: String) -> Result<()> {
     let chort_init = &mut ctx.accounts.chort_init_account;
     chort_init.chort_name = _chortname;
+    chort_init.active = true;
     chort_init.bump = *ctx.bumps.get("chort_init_account").unwrap();
 
     Ok(())

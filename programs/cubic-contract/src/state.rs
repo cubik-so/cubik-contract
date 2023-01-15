@@ -28,10 +28,11 @@ impl ProjectInit {
 pub struct InitChort {
     pub authority: Pubkey,
     pub chort_name: String,
+    pub active: bool,
     pub bump: u8,
 }
 impl InitChort {
-    pub const LEN: usize = 8 + 32 + 1 + 100;
+    pub const LEN: usize = 8 + 32 + 1 + 2 + 100;
 }
 #[account]
 #[derive(Default)]

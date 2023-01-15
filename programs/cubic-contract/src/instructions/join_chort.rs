@@ -4,7 +4,7 @@ use anchor_lang::solana_program::{self, system_program, sysvar::rent::Rent};
 
 #[derive(Accounts)]
 #[instruction(_chortname:String,_projectname:String)]
-pub struct ProjectsChortInit<'info> {
+pub struct JoinChortContext<'info> {
     #[account(mut)]
     pub authority: Signer<'info>,
 
@@ -39,8 +39,8 @@ pub struct ProjectsChortInit<'info> {
 }
 
 pub fn handler(
-    ctx: Context<ProjectsChortInit>,
-    _projectaccount: Pubkey,
+    ctx: Context<JoinChortContext>,
+    _projectname: String,
     _chortname: String,
 ) -> Result<()> {
     let project_chort_account = &mut ctx.accounts.project_chort_account;
