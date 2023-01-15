@@ -10,9 +10,7 @@ declare_id!("Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS");
 pub mod cubic_contract {
     use super::*;
 
-    pub fn create_project(ctx: Context<ProjectsChortInit>,_projectname:String,chortname:String) -> Result<()>{
-        project_chort_init::handler(ctx,_projectname,chortname)
-    }
+    // pub fn create_project(ctx: Context<ProjectsChortInit>,_projectname:String,chortname:String) -> Result<()>{
+    //     project_chort_init::handler(ctx,_projectname,chortname)
+    // }
 }
-
-
